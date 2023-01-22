@@ -23,17 +23,19 @@ $(function(){
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
+        // autoplay: true,
         fade: true,
-        asNavFor: '.testimonial_img'
-    });
-    $('.testimonial_img').slick({
+        asNavFor: '.testimonial_img_nav'
+      });
+      $('.testimonial_img_nav').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         asNavFor: '.testimonial_slider',
-        dots: false,
+        // arrows: false,
+        dotsClass: 'leadershipe_info_slider_nav_dots',
         centerMode: true,
         focusOnSelect: true
-    });
+      });
 
     //Brank slick activation
     $('.brand_img').slick({
@@ -55,6 +57,15 @@ $(function(){
     // scroll activation
     $(window).on('scroll', function(){
         var navScroll = $(window).scrollTop();
+
+        //Menu Fix activation
+
+        if(navScroll > 150){
+            $('#nav').addClass('active');
+        }else{
+            $('#nav').removeClass('active');
+        };
+
 
         //BackToTop
         if(navScroll > 400){
